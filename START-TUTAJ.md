@@ -1,39 +1,47 @@
-# Kod, AI i reszta — Świat projektów
+# Kod, AI i reszta — animowana strona
 
-## Aktualizacja
+Ta wersja zastępuje „Świat projektów”. Nie ma sekcji Wejdź głębiej, scen z aplikacjami, prezentacji 30/90 sekund, kulis ani pustych ekranów przed/po. Widowiskiem jest sam interfejs.
 
-To pełna paczka strony: dotychczasowe funkcje mobilne i PWA oraz nowa prezentacja AI. Rozpakuj ZIP i wgraj jego zawartość do głównego katalogu repozytorium KodAIireszta, nadpisując istniejące pliki. Zachowaj foldery assets, scripts, examples i .github. Nie wgrywaj ZIP-a jako pojedynczego pliku strony. Nie zmieniaj domeny, DNS ani ustawień HTTPS.
+## Oprawa
 
-Dotychczasowy workflow Sync portal content ma nadal budować `node scripts/build-site.cjs` i publikować `dist` przez GitHub Pages. Folder dist nie jest w paczce i nie trzeba go przesyłać. Jeśli masz już zainstalowaną PWA, sprawdź w jej ustawieniach przycisk „Nowa wersja — odśwież”.
+- Płynne, proceduralne tło WebGL: fale, metaliczne refleksy, szklane światło i cyfrowa siatka.
+- Przestrzenny znak </> modelowany i oświetlany w shaderze. Podczas przewijania przemieszcza się ku znakowi nagłówka.
+- Dwusekundowe wejście: przestrzenny znak, przelot i fala odsłaniająca stronę. Raz na sesję, bez fikcyjnych procentów. Pomiń jest dostępne od początku.
+- Trzy oprawy: Płynny metal, Szkło, Cyfrowa materia. Przełącza je przycisk przy nagłówku. Wybór zapisuje się na urządzeniu.
+- Świetlna nić prowadząca przez stronę, falowanie granic sekcji, bezwładność tła, rozświetlenie przy wyborze sekcji i szczelina przejścia.
+- Reakcja na położenie palca/wskaźnika: światło, deformacja tła, fala, świetlna smuga i cząsteczki.
+- Węzeł świetlnych punktów powstający podczas przewijania. Poszczególne materiały zmieniają formę na splot, spiralę lub falę. Liczba punktów i rozdzielczość są mniejsze na telefonie.
+- Magnetyczne przyciski dla myszy, miękkie kształty kontrolek, szkło i odbicia kart, głębia paneli oraz zmiany typografii.
+- Generatywna kompozycja: Stwórz własny kadr → Nowa kompozycja → Zapisz PNG. Grafika powstaje lokalnie. Nie jest to generowanie przez model AI.
+- Istniejące przejście PL/EN rozbudowane o rozproszenie i ponowne złożenie tekstu.
+- Finał przy stopce: cząsteczki zbierają się wokół znaku kodu.
 
-## Gdzie są nowe funkcje
+To jedna oprawa o wspólnych parametrach ruchu, światła i materiału. Nie każda metafora oznacza osobną sekwencję. Filmy, aplikacje, miniatury, galerie, ulubione, udostępnianie, ustawienia oraz PWA pozostają dostępne. Układ desktopowy nadal pokazuje katalog w dwóch kolumnach; na telefonie są zakładki i dolne menu.
 
-- Pod nagłówkiem: przestrzenny rdzeń AI i przycisk „Wejdź przez monitor”. Na komputerze można też dotknąć samego ekranu monitora na grafice.
-- Wejście: krótki tunel znaków z przyciskiem Pomiń.
-- Świat aplikacji: przestrzenne obiekty z rzeczywistymi zrzutami, własnymi symbolami i kolorami. Wybranie obiektu zmienia światło, podgląd oraz wyróżnienie jego karty na stronie.
-- Mapa: połączenia prowadzące do tych samych projektów.
-- Sieć neuronowa: Wyślij impuls uruchamia wizualizację połączeń. To efekt edukacyjny, nie działający model AI.
-- Pokaz projektu: nowy przycisk przy każdej aplikacji. Dostępne są Pokaz, Wideo, Od pomysłu, Kulisy, Przed/po.
-- Pokaz: prawdziwe zrzuty, podpisy, wybór 30 lub 90 sekund, odtwarzanie, pauza i przechodzenie do kolejnej sceny. Pokaz zdjęć nie udaje nagrania działania aplikacji.
-- Tryb wystawowy: w świecie aplikacji. Przechodzi między projektami w pętli. Dotknięcie prezentacji zatrzymuje pokaz; można go wznowić przyciskiem Odtwórz. Zmiana karty przeglądarki pauzuje pokaz.
-- Rekonstrukcja: cząsteczki i ponowne złożenie widoku po zakończeniu pokazu lub wyjściu z wystawy.
-- Ukryta niespodzianka: pięć szybkich dotknięć logo w górnym menu otwiera ukrytą sieć.
-- Efekt głębi: rdzeń przesuwa się subtelnie względem tekstu podczas przewijania. Ruch respektuje ustawienia i ograniczenia systemowe.
+## Aktualizacja GitHuba
 
-## Materiały, których nie otrzymałem
+1. Rozpakuj KodAIireszta-animowana-strona.zip.
+2. W repozytorium KodAIireszta wybierz Add file → Upload files.
+3. Przeciągnij zawartość rozpakowanego folderu, razem z assets, scripts i .github. Nadpisz istniejące pliki. Nie przesyłaj ZIP-a jako pojedynczego pliku.
+4. Commit changes. Poczekaj na zielony Sync portal content.
+5. Settings → Pages → Source pozostaje GitHub Actions. Dotychczasowy automat buduje dist, zawierający wyłącznie aktualną wersję. Nie zmieniaj DNS, domeny ani HTTPS.
+6. Otwórz stronę i odśwież. W zainstalowanej PWA sprawdź Ustawienia → Nowa wersja — odśwież, jeśli jest dostępne. W razie starej zapisanej oprawy można zamknąć wszystkie okna aplikacji i otworzyć ją ponownie.
 
-Nie ma jeszcze nagrań aplikacji, napisów do nagrań, prawdziwych par obrazów przed/po ani osobistych relacji z procesu tworzenia. Ich obsługa jest zbudowana, ale widoki uczciwie pokazują brak materiału. Nie dopisałem fikcyjnych trudności, dat i wniosków. Bieżące opisy oraz dostępne zrzuty są używane jako podstawa pokazu.
+Stare źródła showcase.js/showcase.css/presentation.js mogą pozostać w historii repozytorium; nie są już wczytywane ani publikowane z dist. Nie trzeba usuwać ich ręcznie, jeśli publikujesz przez dostarczony workflow.
 
-Aby dodać materiały:
+## Pierwsze sprawdzenie
 
-1. Utwórz folder assets/demos i umieść tam nagrania MP4/WebM, napisy WebVTT oraz obrazy PNG/JPEG/WebP. Większe nagrania mogą wymagać osobnego hostingu i dostosowania konfiguracji; nie wgrywaj ich bez sprawdzenia limitów repozytorium.
-2. Edytuj showcase-content.js. Przykład jest w examples/showcase-content.example.js — wpisuj tylko istniejące pliki i prawdziwe informacje.
-3. Klucze obecnych projektów: finanse, muzyczne-klocki, angielski, skoczek, krok-kcal, github-73797374656d6f735f776562.
-4. Pole video wskazuje nagranie, captions napisy, before/after prawdziwą parę do porównania, goal/challenge/lesson opis autora, timeline etapy historii. Opcjonalny obiekt en zawiera wersję angielską. Bez niego używany jest wpis podstawowy.
-5. Wgraj zmiany na GitHub. Automat budowania kopiuje assets/demos i odświeża wersję PWA.
+- Otwórz główną stronę, obejrzyj 2-sekundowe wejście i sprawdź Pomiń. Ponowne odświeżenie tej samej sesji nie powinno wymuszać animacji.
+- Przełącz trzy rzeczywistości przy nagłówku; przewiń do kart i stopki.
+- Dotknij pustego tła; na komputerze poruszaj myszą przy przyciskach.
+- Sprawdź obie zakładki, zapisanie ulubionego, galerię i szczegóły.
+- Stwórz i pobierz własny kadr PNG.
+- Sprawdź PL/EN i ustawienia. Pełne efekty są domyślne dla nowej wizyty. Starsze zapisane preferencje nie są kasowane; Przywróć domyślne włączy pełny zestaw. Systemowe ograniczenie ruchu zawsze ma pierwszeństwo.
 
-## Sprawdzenie po wgraniu
+## Weryfikacja i ograniczenia
 
-Otwórz stronę po HTTPS na telefonie i komputerze. Sprawdź Wejdź przez monitor → Pomiń → wybór aplikacji → Odkryj projekt. Przejdź przez Mapę i Sieć. W Pokazie przetestuj 30/90 sekund i pauzę. Sprawdź też wyłączone efekty w ustawieniach. Wszystkie dotychczasowe filmy, aplikacje, ulubione i ustawienia pozostają dostępne.
+Przeszły testy działania DOM w PL/EN, zachowania katalogu, kart, zakładek, galerii, ulubionych i paneli, zmiany oprawy i zapisu ustawień, pomijania wejścia, wyłączenia ruchu, zgodności plików oraz PWA. Sprawdzono również interfejs renderera, skończone wartości parametrów i sprzątanie zasobów przy użyciu atrap WebGL. To nie jest test renderowania na prawdziwym GPU.
 
-Testy działania PL/EN i budowania przeszły. Zweryfikowano również odtwarzacz z przykładową konfiguracją materiałów, ścieżkę napisów, suwak porównania i zapasową kopię PWA offline. Konfiguracja testowa nie trafia do strony. Nie potwierdzono wizualnie efektów na fizycznym telefonie; lokalny podgląd przeglądarkowy był niedostępny. To pełna paczka do wgrania, nie informacja o publikacji na żywej domenie.
+Próba testu wizualnego w Edge została zatrzymana przez narzędzie kontroli komputera, które nie mogło wiarygodnie ustalić adresu karty. Nie obchodzono tego zabezpieczenia. Dlatego wygląd i kompilację shaderów na konkretnym urządzeniu trzeba potwierdzić po otwarciu strony. W razie braku WebGL lub błędu kompilacji strona przechodzi na tło CSS i przestrzenny znak CSS; treść i nawigacja nadal działają. Nie potwierdzono płynności na fizycznym telefonie.
+
+Wersja nie została automatycznie opublikowana na Twoim koncie — to gotowa paczka do wgrania.
