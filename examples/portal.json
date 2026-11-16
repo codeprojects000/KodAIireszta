@@ -1,0 +1,9 @@
+{
+  "title": "Nazwa aplikacji",
+  "description": "Krótki opis po polsku.",
+  "descriptionEn": "A short description in English.",
+  "details": "Dłuższy opis możliwości aplikacji, zgodny z jej działaniem.",
+  "detailsEn": "A longer description of what the app actually does.",
+  "image": "preview.png",
+  "hidden": false
+}
