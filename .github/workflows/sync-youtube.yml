@@ -1,37 +1,46 @@
 name: Sync portal content
 
 on:
+  push:
+    branches: [main]
   schedule:
     - cron: '17 */6 * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
-  group: portal-content-sync
+  group: portal-pages
   cancel-in-progress: false
 
 jobs:
-  sync:
+  publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
-
+        with:
+          ref: main
       - uses: actions/setup-node@v7
         with:
           node-version: '24'
           package-manager-cache: false
-
-      - name: Aktualizuj filmy
+      - name: Update videos
+        if: github.event_name != 'push'
         run: node scripts/sync-youtube.cjs
-
-      - name: Aktualizuj projekty
+      - name: Update projects
+        if: github.event_name != 'push'
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/sync-github.cjs
-
-      - name: Zapisz zmiany
+      - name: Save content
+        if: github.event_name != 'push'
         run: |
           git add -- content.json content.js assets
           if git diff --cached --quiet; then
@@ -41,3 +50,12 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Update portal content"
           git push
+      - name: Build website
+        run: node scripts/build-site.cjs
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4
