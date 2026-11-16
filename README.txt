@@ -1,0 +1,1 @@
+Kod, AI i reszta — repozytorium codeprojects000/KodAIireszta. Domena https://www.kodaiireszta.pl/. Zacznij od START-TUTAJ.md. Wgraj zawartość folderu, razem z .github, do głównego katalogu repozytorium. Nie wgrywaj ZIP-a. Cloudflare Pages: Framework None; Build command: node scripts/build-site.cjs; Output: dist; NODE_VERSION=24. Nie usuwaj portal.json z hidden:true.

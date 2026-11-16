@@ -1,0 +1,8 @@
+{
+  "owner": "codeprojects000",
+  "mode": "all-public",
+  "includeForks": false,
+  "includeArchived": false,
+  "exclude": ["codeprojects000.github.io", "miniportal-ai", "KodAIireszta"],
+  "manifestFile": "portal.json"
+}

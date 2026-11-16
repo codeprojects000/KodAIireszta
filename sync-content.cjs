@@ -1,0 +1,1 @@
+const fs=require('fs');const path=require('path');const root=__dirname;const data=JSON.parse(fs.readFileSync(path.join(root,'content.json'),'utf8'));fs.writeFileSync(path.join(root,'content.js'),'window.PORTAL_CONTENT = '+JSON.stringify(data)+';\n');console.log('Zaktualizowano content.js');
