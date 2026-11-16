@@ -1,0 +1,1 @@
+Aktualizacja mobilna: wgraj zawartość folderu do głównego katalogu KodAIireszta, nadpisując istniejące pliki i zachowując folder assets/responsive. Nie zmieniaj domeny ani DNS. Publikacja przez GitHub Actions. START-TUTAJ.md opisuje starszą konfigurację Cloudflare — nie korzystaj z niej; zostajemy na GitHub Pages.

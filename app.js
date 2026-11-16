@@ -7,6 +7,16 @@
   }
   const english = document.documentElement.lang === 'en';
   if (english) data = {...data, ...data.en};
+  // Small card images; original screenshots are requested only when a gallery opens.
+  function responsiveImage(image, source, sizes) {
+    const variants = data.imageVariants?.[source];
+    if (!variants?.length) return;
+    image.srcset = variants.map(item => item.src + ' ' + item.width + 'w').join(', ');
+    image.sizes = sizes;
+  }
+  document.querySelectorAll('img[src="assets/branding/kod-ai-i-reszta.png"]').forEach(image => {
+    responsiveImage(image, 'assets/branding/kod-ai-i-reszta.png', '(max-width: 760px) 100vw, 1200px');
+  });
   const words = english ? {open:'Open app',zoom:'Enlarge preview',shot:'App screenshot: ',large:'Enlarged app screenshot: ',details:'Project details',preview:'Enlarge screen: ',watch:'Watch on YouTube',video:'VIDEO',apps:'independent apps',comfortOn:'Disable reading comfort',comfortOff:'Enable reading comfort',screen:'Screen'} : {open:'Uruchom aplikację',zoom:'Powiększ podgląd',shot:'Zrzut ekranu aplikacji ',large:'Powiększony zrzut ekranu: ',details:'Szczegóły projektu',preview:'Powiększ ekran: ',watch:'Oglądaj w YouTube',video:'WIDEO',apps:'autorskie aplikacje',comfortOn:'Wyłącz komfort czytania',comfortOff:'Włącz komfort czytania',screen:'Ekran'};
   const get = id => document.getElementById(id);
   const el = (tag, text, className) => { const node = document.createElement(tag); node.textContent = text; if (className) node.className = className; return node; };
@@ -47,13 +57,13 @@
     const size = (galleryProject.gallery || [galleryProject.image]).length;
     galleryIndex = (galleryIndex + step + size) % size; paintGallery();
   }
-  function showGallery(project) {
+  function showGallery(project, source) {
     galleryProject = project; galleryIndex = 0;
     gallery.style.setProperty('--project-accent', project.accent);
     get('gallery-title').textContent = project.title;
     const url = safeUrl(project.url); get('gallery-launch').hidden = !url;
     if (url) get('gallery-launch').href = url;
-    paintGallery(); gallery.showModal();
+    paintGallery(); gallery.showModal(); window.portalEffects?.zoom(source, get('gallery-image'), gallery);
   }
   get('gallery-prev').onclick = () => moveGallery(-1); get('gallery-next').onclick = () => moveGallery(1);
   gallery.addEventListener('keydown', event => { if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') { event.preventDefault(); moveGallery(event.key === 'ArrowRight' ? 1 : -1); } });
@@ -68,8 +78,8 @@
     const card = el('article', '', 'card'); card.id = 'project-' + project.id; card.style.setProperty('--project-accent', project.accent);
     const preview = el('button', '', 'project-preview'); preview.type = 'button'; preview.setAttribute('aria-label', words.preview + project.title);
     const chrome = el('span', '', 'preview-chrome'); chrome.append(el('span', '● ● ●', 'preview-dots'), el('span', project.title, 'preview-label'), el('span', '⤢', 'preview-arrow'));
-    const image = el('img', ''); image.src = project.image; image.alt = words.shot + project.title; image.loading = 'lazy'; image.decoding = 'async'; image.width = 1265; image.height = 712;
-    preview.append(chrome, image, el('span', words.zoom + ' ⤢', 'preview-hint')); preview.onclick = () => showGallery(project);
+    const image = el('img', ''); image.src = project.image; responsiveImage(image, project.image, '(max-width: 760px) 90vw, 420px'); image.alt = words.shot + project.title; image.loading = 'lazy'; image.decoding = 'async'; image.width = 1265; image.height = 712;
+    preview.append(chrome, image, el('span', words.zoom + ' ⤢', 'preview-hint')); preview.onclick = () => showGallery(project, image);
     card.append(preview, el('span', project.category, 'badge'), el('h3', project.title), el('p', project.description));
     const actions = el('div', '', 'project-actions'); const more = el('button', words.details, 'project-details'); more.type = 'button'; more.onclick = () => showProject(project); actions.append(more);
     const url = safeUrl(project.url); if (url) actions.append(link(project.linkLabel || words.open, url, 'project-open'));
@@ -79,7 +89,7 @@
     const card = el('article', '', 'post-card'), media = el('div', '', 'post-media'), url = safeUrl(post.url);
     card.id = 'video-' + post.videoId;
     const thumbnail = el('a', '', 'post-thumbnail'); if (url) thumbnail.href = url; thumbnail.target = '_blank'; thumbnail.rel = 'noopener noreferrer'; thumbnail.setAttribute('aria-label', words.watch + ': ' + post.title);
-    const image = el('img', ''); image.src = post.thumbnail || ('assets/thumbnails/' + post.videoId + '.jpg'); image.alt = (english ? 'Video thumbnail: ' : 'Miniatura filmu: ') + post.title; image.loading = 'lazy'; image.decoding = 'async'; image.width = 480; image.height = 360; thumbnail.append(image); media.append(thumbnail);
+    const image = el('img', ''); image.src = post.thumbnail || ('assets/thumbnails/' + post.videoId + '.jpg'); responsiveImage(image, post.thumbnail || ('assets/thumbnails/' + post.videoId + '.jpg'), '(max-width: 530px) 40vw, 240px'); image.alt = (english ? 'Video thumbnail: ' : 'Miniatura filmu: ') + post.title; image.loading = 'lazy'; image.decoding = 'async'; image.width = 480; image.height = 360; thumbnail.append(image); media.append(thumbnail);
     if (url) { const watch = link(words.watch, url, 'youtube-button'); const icon = el('span', '▶', 'youtube-icon'); icon.setAttribute('aria-hidden', 'true'); watch.prepend(icon); media.append(watch); }
     const text = el('div', '', 'post-copy'); text.append(el('span', String(index + 1).padStart(2, '0') + ' / ' + post.category, 'post-meta'), el('h3', post.title));
     (post.description || post.excerpt).split(String.fromCharCode(10,10)).forEach(paragraph => text.append(el('p', paragraph)));
@@ -160,8 +170,9 @@
     try { sessionStorage.setItem(transitionKey, JSON.stringify(position)); } catch { return; }
     event.preventDefault();
     if (reducedMotion.matches || !preferences.allowMotion()) { location.assign(next.href); return; }
+    window.portalEffects?.scatter();
     document.documentElement.classList.add('language-leaving');
-    setTimeout(() => location.assign(next.href), 130);
+    setTimeout(() => location.assign(next.href), 420);
   }));
   addEventListener('pageshow', () => document.documentElement.classList.remove('language-leaving'));
 

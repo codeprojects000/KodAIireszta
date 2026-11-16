@@ -1,0 +1,1 @@
+Wgraj zawartość rozpakowanego archiwum do głównego katalogu repozytorium KodAIireszta, nadpisując wcześniejsze pliki. Zachowaj folder assets/responsive. Nie zmieniaj DNS ani ustawień domeny. GitHub Actions opublikuje aktualizację. Pięć nowych efektów jest w effects.js. Efekty respektują ograniczenie ruchu i ustawienia strony.
