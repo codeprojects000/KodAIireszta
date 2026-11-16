@@ -1,6 +1,6 @@
 'use strict';
-const PREFIX='kodai-portal-',VERSION='299e3902aefebd04',CACHE=PREFIX+VERSION;
-const SHELL=['./','index.html','en.html','style.css','mobile.css','app.js','settings.js','content.js','content.json','effects.js','mobile.js','presentation.js','advanced-effects.js','pwa.js','brand-intro.js','monitor.js','manifest.webmanifest','favicon.svg','assets/icons/icon-192.png','assets/icons/icon-512.png'];
+const PREFIX='kodai-portal-',VERSION='4fc0e047f72ef629',CACHE=PREFIX+VERSION;
+const SHELL=['./','index.html','en.html','style.css','mobile.css','app.js','settings.js','content.js','content.json','effects.js','mobile.js','presentation.js','advanced-effects.js','pwa.js','showcase.js','showcase-content.js','showcase.css','brand-intro.js','monitor.js','manifest.webmanifest','favicon.svg','assets/icons/icon-192.png','assets/icons/icon-512.png'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)));});
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener('message',event=>{if(event.data==='SKIP_WAITING')self.skipWaiting();});
