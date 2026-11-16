@@ -505,5 +505,163 @@
         "youtubeUpdatedAt": "2026-11-10T21:39:15.000Z"
       }
     ]
+  },
+  "imageVariants": {
+    "assets/public-projects/skoczek-gra.png": [
+      {
+        "width": 320,
+        "src": "assets/responsive/skoczek-gra-320.jpg"
+      },
+      {
+        "width": 640,
+        "src": "assets/responsive/skoczek-gra-640.jpg"
+      }
+    ],
+    "assets/public-projects/angielski-gramatyka.png": [
+      {
+        "width": 320,
+        "src": "assets/responsive/angielski-gramatyka-320.jpg"
+      },
+      {
+        "width": 640,
+        "src": "assets/responsive/angielski-gramatyka-640.jpg"
+      }
+    ],
+    "assets/public-projects/muzyka-pianino.png": [
+      {
+        "width": 320,
+        "src": "assets/responsive/muzyka-pianino-320.jpg"
+      },
+      {
+        "width": 640,
+        "src": "assets/responsive/muzyka-pianino-640.jpg"
+      }
+    ],
+    "assets/thumbnails/tkLSmNXAuQM.jpg": [
+      {
+        "width": 320,
+        "src": "assets/responsive/tkLSmNXAuQM-320.jpg"
+      }
+    ],
+    "assets/public-projects/horizon-desktop.png": [
+      {
+        "width": 320,
+        "src": "assets/responsive/horizon-desktop-320.jpg"
+      },
+      {
+        "width": 640,
+        "src": "assets/responsive/horizon-desktop-640.jpg"
+      }
+    ],
+    "assets/public-projects/horizon-login.png": [
+      {
+        "width": 320,
+        "src": "assets/responsive/horizon-login-320.jpg"
+      },
+      {
+        "width": 640,
+        "src": "assets/responsive/horizon-login-640.jpg"
+      }
+    ],
+    "assets/thumbnails/NJQFsLPTyLI.jpg": [
+      {
+        "width": 320,
+        "src": "assets/responsive/NJQFsLPTyLI-320.jpg"
+      }
+    ],
+    "assets/thumbnails/Aw0Y_ClSRsg.jpg": [
+      {
+        "width": 320,
+        "src": "assets/responsive/Aw0Y_ClSRsg-320.jpg"
+      }
+    ],
+    "assets/thumbnails/LzdfsWps6Bw.jpg": [
+      {
+        "width": 320,
+        "src": "assets/responsive/LzdfsWps6Bw-320.jpg"
+      }
+    ],
+    "assets/public-projects/skoczek-menu.png": [
+      {
+        "width": 320,
+        "src": "assets/responsive/skoczek-menu-320.jpg"
+      },
+      {
+        "width": 640,
+        "src": "assets/responsive/skoczek-menu-640.jpg"
+      }
+    ],
+    "assets/public-projects/kalorie-start.png": [
+      {
+        "width": 320,
+        "src": "assets/responsive/kalorie-start-320.jpg"
+      },
+      {
+        "width": 640,
+        "src": "assets/responsive/kalorie-start-640.jpg"
+      }
+    ],
+    "assets/thumbnails/Y_R-0Sqd5U4.jpg": [
+      {
+        "width": 320,
+        "src": "assets/responsive/Y_R-0Sqd5U4-320.jpg"
+      }
+    ],
+    "assets/thumbnails/FUAmWtsmXJ8.jpg": [
+      {
+        "width": 320,
+        "src": "assets/responsive/FUAmWtsmXJ8-320.jpg"
+      }
+    ],
+    "assets/branding/kod-ai-i-reszta.png": [
+      {
+        "width": 640,
+        "src": "assets/responsive/kod-ai-i-reszta-640.jpg"
+      },
+      {
+        "width": 1000,
+        "src": "assets/responsive/kod-ai-i-reszta-1000.jpg"
+      }
+    ],
+    "assets/public-projects/finanse-start.png": [
+      {
+        "width": 320,
+        "src": "assets/responsive/finanse-start-320.jpg"
+      },
+      {
+        "width": 640,
+        "src": "assets/responsive/finanse-start-640.jpg"
+      }
+    ],
+    "assets/public-projects/finanse-plan.png": [
+      {
+        "width": 320,
+        "src": "assets/responsive/finanse-plan-320.jpg"
+      },
+      {
+        "width": 640,
+        "src": "assets/responsive/finanse-plan-640.jpg"
+      }
+    ],
+    "assets/public-projects/muzyka-warsztat.png": [
+      {
+        "width": 320,
+        "src": "assets/responsive/muzyka-warsztat-320.jpg"
+      },
+      {
+        "width": 640,
+        "src": "assets/responsive/muzyka-warsztat-640.jpg"
+      }
+    ],
+    "assets/public-projects/angielski-dodaj.png": [
+      {
+        "width": 320,
+        "src": "assets/responsive/angielski-dodaj-320.jpg"
+      },
+      {
+        "width": 640,
+        "src": "assets/responsive/angielski-dodaj-640.jpg"
+      }
+    ]
   }
 }
