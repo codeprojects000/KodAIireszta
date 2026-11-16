@@ -33,6 +33,7 @@
     if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
   }));
   function showProject(project) {
+    if(window.mobilePortal){window.mobilePortal.openDetail(project);return;}
     get('detail-category').textContent = project.category;
     get('detail-title').textContent = project.title;
     get('detail-body').textContent = project.details;
@@ -195,6 +196,7 @@
       document.querySelectorAll('.card, .post-card, .about-section').forEach(node => { node.classList.add('reveal'); reveal.observe(node); });
     }
   }
+  dispatchEvent(new CustomEvent('portalready',{detail:{data,openProject:showProject,openGallery:showGallery}}));
 })();
 (function () {
   const progress = document.querySelector('.reading-progress'); if (!progress) return;

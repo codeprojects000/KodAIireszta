@@ -1,1 +1,1 @@
-Kod, AI i reszta — GitHub Pages. Aktualizacja mobilna. Przeczytaj AKTUALIZACJA-TELEFON.txt. Cloudflare nie jest używany.
+Kod, AI i reszta — aktualizacja mobilna i PWA. Przeczytaj START-TUTAJ.md. Hosting: GitHub Pages. Nie zmieniaj DNS.
