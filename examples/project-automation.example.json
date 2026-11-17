@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "projects": {
+    "nazwa-repozytorium": {
+      "title": "Moja nazwa aplikacji",
+      "description": "Własny krótki opis aplikacji.",
+      "descriptionEn": "Your own English app description.",
+      "screenshots": {
+        "enabled": true,
+        "locked": false,
+        "desktopPath": "demo.html",
+        "mobilePath": "demo.html",
+        "waitFor": "main",
+        "clicks": []
+      }
+    },
+    "inne-repozytorium": {
+      "screenshots": {
+        "locked": true
+      }
+    }
+  }
+}
