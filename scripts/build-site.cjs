@@ -9,9 +9,9 @@ if (base.protocol !== 'https:' || base.username || base.password || base.search 
 if (path.dirname(out) !== root || path.basename(out) !== 'dist') throw Error('Invalid build directory');
 fs.rmSync(out, { recursive: true, force: true });
 fs.mkdirSync(out, { recursive: true });
-const files = ['index.html','en.html','style.css','app.js','effects.js','settings.js','monitor.js','content.json','content.js','favicon.svg','mobile.css','mobile.js','pwa.js','manifest.webmanifest','sw.js','cinema.css','cinema-gl.js','cinema.js'];
+const files = ['index.html','en.html','style.css','app.js','effects.js','settings.js','monitor.js','brand-intro.js','content.json','content.js','favicon.svg','mobile.css','mobile.js','presentation.js','advanced-effects.js','pwa.js','manifest.webmanifest','sw.js','preview-settings.js','effects-preview.html','effects-preview-en.html','layout-polish.css','layout-polish.js'];
 for (const file of files) fs.copyFileSync(path.join(root, file), path.join(out, file));
-for (const dir of ['branding','thumbnails','public-projects','github-projects','responsive','icons','demos']) {
+for (const dir of ['branding','thumbnails','public-projects','github-projects','responsive','icons']) {
  const src = path.join(root, 'assets', dir);
  if (fs.existsSync(src)) fs.cpSync(src, path.join(out, 'assets', dir), { recursive: true });
 }

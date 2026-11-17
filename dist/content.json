@@ -515,6 +515,10 @@
       {
         "width": 640,
         "src": "assets/responsive/skoczek-gra-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/skoczek-gra.png",
+        "width": 1280
       }
     ],
     "assets/public-projects/angielski-gramatyka.png": [
@@ -525,6 +529,10 @@
       {
         "width": 640,
         "src": "assets/responsive/angielski-gramatyka-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/angielski-gramatyka.png",
+        "width": 1265
       }
     ],
     "assets/public-projects/muzyka-pianino.png": [
@@ -535,6 +543,10 @@
       {
         "width": 640,
         "src": "assets/responsive/muzyka-pianino-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/muzyka-pianino.png",
+        "width": 1265
       }
     ],
     "assets/thumbnails/tkLSmNXAuQM.jpg": [
@@ -551,6 +563,10 @@
       {
         "width": 640,
         "src": "assets/responsive/horizon-desktop-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/horizon-desktop.png",
+        "width": 1280
       }
     ],
     "assets/public-projects/horizon-login.png": [
@@ -561,6 +577,10 @@
       {
         "width": 640,
         "src": "assets/responsive/horizon-login-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/horizon-login.png",
+        "width": 1280
       }
     ],
     "assets/thumbnails/NJQFsLPTyLI.jpg": [
@@ -589,6 +609,10 @@
       {
         "width": 640,
         "src": "assets/responsive/skoczek-menu-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/skoczek-menu.png",
+        "width": 1280
       }
     ],
     "assets/public-projects/kalorie-start.png": [
@@ -599,6 +623,10 @@
       {
         "width": 640,
         "src": "assets/responsive/kalorie-start-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/kalorie-start.png",
+        "width": 1280
       }
     ],
     "assets/thumbnails/Y_R-0Sqd5U4.jpg": [
@@ -631,6 +659,10 @@
       {
         "width": 640,
         "src": "assets/responsive/finanse-start-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/finanse-start.png",
+        "width": 1265
       }
     ],
     "assets/public-projects/finanse-plan.png": [
@@ -641,6 +673,10 @@
       {
         "width": 640,
         "src": "assets/responsive/finanse-plan-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/finanse-plan.png",
+        "width": 1265
       }
     ],
     "assets/public-projects/muzyka-warsztat.png": [
@@ -651,6 +687,10 @@
       {
         "width": 640,
         "src": "assets/responsive/muzyka-warsztat-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/muzyka-warsztat.png",
+        "width": 1265
       }
     ],
     "assets/public-projects/angielski-dodaj.png": [
@@ -661,6 +701,10 @@
       {
         "width": 640,
         "src": "assets/responsive/angielski-dodaj-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/angielski-dodaj.png",
+        "width": 1265
       }
     ]
   }

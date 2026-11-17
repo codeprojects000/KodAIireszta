@@ -10,4 +10,3 @@ body[data-effective-effects=off] *,body[data-effective-effects=off] *:before,bod
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.particle-logo,.launch-portal{display:none}.story-step{transform:none;opacity:1}}
 
 @media(min-width:761px){.content-tabs{display:none!important}.homepage-columns>section{visibility:visible}}
-.project-browser{grid-template-rows:auto minmax(0,1fr)}.project-carousel-card{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:18px;padding:10px;display:flex;flex-direction:column;gap:12px}.project-carousel-card img{min-height:0;flex:1;object-fit:contain;width:100%}.project-carousel-card strong{padding:8px;font-size:16px}.browse-projects{margin-bottom:22px}
