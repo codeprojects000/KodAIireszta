@@ -1,6 +1,6 @@
 'use strict';
 (function(){
-  const key='portal-site-settings-v1',english=document.documentElement.lang==='en';
+  const key=(new URLSearchParams(location.search||'').has('appearance-preview')?'portal-comparison-':'portal-')+'site-settings-v1',english=document.documentElement.lang==='en';
   const defaults={accent:'turquoise',theme:'dark',font:'standard',density:'comfortable',effects:'full',contrast:'standard',previews:'large',mobileOrder:'films',startView:'films',showFilms:true,showProjects:true,showAbout:true,focus:false};
   const choices={accent:['turquoise','purple','blue','amber','green'],theme:['dark','graphite','light'],font:['standard','large'],density:['comfortable','compact'],effects:['full','subtle','off'],contrast:['standard','high'],previews:['small','large'],mobileOrder:['films','projects'],startView:['films','projects','favourites']};
   const colors={turquoise:'#39decf',purple:'#b99af5',blue:'#72c4f5',amber:'#e7be72',green:'#92d5a0'};
@@ -24,7 +24,7 @@
     status.textContent=canStore?(english?'Saved on this device.':'Zapisano na tym urządzeniu.'):(english?'Settings work for this visit; this browser blocks saving them.':'Ustawienia działają teraz, ale przeglądarka blokuje ich zapis.');
     dispatchEvent(new Event('portalsettingschange'));
   }
-  window.portalSettings={allowMotion,get:()=>({...settings}),defaults:{...defaults},validate};
+  window.portalSettings={allowMotion,get:()=>({...settings}),defaults:{...defaults},validate,patch:(value,options={})=>{settings=validate({...settings,...value});if(options.persist!==false)persist();apply();return canStore;}};
   form.addEventListener('submit',event=>event.preventDefault());
   form.addEventListener('change',event=>{const control=event.target;if(!(control.name in defaults))return;settings=validate({...settings,[control.name]:control.type==='checkbox'?control.checked:control.value});persist();if(control.name==='theme'&&window.portalThemeChange)window.portalThemeChange(apply);else apply();});
   document.getElementById('settings-open').onclick=()=>panel.showModal();

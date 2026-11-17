@@ -3,7 +3,7 @@
  const allowed=()=>window.portalSettings?.allowMotion()??false;
  // Native theme transition with an immediate fallback on browsers without the API.
  window.portalThemeChange=apply=>{
-   if(!allowed()||!document.startViewTransition){apply();return;}
+   if(!allowed()||window.portalAdvanced?.get().transitions===false||!document.startViewTransition){apply();return;}
    const x=innerWidth*.8,y=innerHeight*.2,radius=Math.hypot(innerWidth,innerHeight);
    const change=document.startViewTransition(apply);
    change.ready.then(()=>{document.documentElement.animate({clipPath:[`circle(0px at ${x}px ${y}px)`,`circle(${radius}px at ${x}px ${y}px)`]},{duration:650,easing:'ease-in-out',pseudoElement:'::view-transition-new(root)'});}).catch(()=>{});
@@ -22,12 +22,12 @@
  let canvas=null,particleFrame=0;
  function stopParticles(){cancelAnimationFrame(particleFrame);canvas?.remove();canvas=null;}
  function particles(){
-   if(!allowed()||document.hidden)return;
+   if(!allowed()||document.hidden||window.portalAdvanced?.get().particles===false)return;
    try{if(sessionStorage.getItem('portal-particles-seen'))return;sessionStorage.setItem('portal-particles-seen','1');}catch{}
    canvas=document.createElement('canvas');canvas.className='particle-logo';canvas.width=640;canvas.height=140;canvas.setAttribute('aria-hidden','true');hero.append(canvas);const ctx=canvas.getContext('2d');if(!ctx){stopParticles();return;}
    const sample=document.createElement('canvas');sample.width=640;sample.height=140;const brush=sample.getContext('2d');brush.font='700 52px Segoe UI, sans-serif';brush.textAlign='center';brush.fillText('〈/〉 Kod, AI i reszta',320,85);const pixels=brush.getImageData(0,0,640,140).data,points=[];
    for(let y=30;y<100;y+=5)for(let x=10;x<630;x+=5)if(pixels[(y*640+x)*4+3]>100)points.push({x,y,dx:(Math.random()-.5)*600,dy:(Math.random()-.5)*240});
-   const start=performance.now();function paint(now){if(!allowed()||document.hidden||!canvas){stopParticles();return;}const p=Math.min(1,(now-start)/1300),ease=1-Math.pow(1-p,3);ctx.clearRect(0,0,640,140);ctx.fillStyle=getComputedStyle(document.body).getPropertyValue('--accent').trim()||'#39decf';points.forEach(dot=>{ctx.globalAlpha=Math.min(1,p*4)*(p>.8?(1-p)/.2:1);ctx.fillRect(dot.x+dot.dx*(1-ease),dot.y+dot.dy*(1-ease),2.5,2.5);});if(p<1)particleFrame=requestAnimationFrame(paint);else stopParticles();}particleFrame=requestAnimationFrame(paint);
+   const start=performance.now();function paint(now){if(!allowed()||document.hidden||!canvas||window.portalAdvanced?.get().particles===false){stopParticles();return;}const p=Math.min(1,(now-start)/1300),ease=1-Math.pow(1-p,3);ctx.clearRect(0,0,640,140);ctx.fillStyle=getComputedStyle(document.body).getPropertyValue('--accent').trim()||'#39decf';points.forEach(dot=>{ctx.globalAlpha=Math.min(1,p*4)*(p>.8?(1-p)/.2:1);ctx.fillRect(dot.x+dot.dx*(1-ease),dot.y+dot.dy*(1-ease),2.5,2.5);});if(p<1)particleFrame=requestAnimationFrame(paint);else stopParticles();}particleFrame=requestAnimationFrame(paint);
  }
  setTimeout(particles,800);document.addEventListener('visibilitychange',()=>{if(document.hidden)stopParticles();});addEventListener('portalsettingschange',()=>{if(!allowed())stopParticles();});
 })();

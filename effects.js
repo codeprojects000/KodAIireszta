@@ -9,7 +9,7 @@
     animation.finished.catch(() => {}).finally(() => { active.delete(animation); node.remove(); });
   }
   document.addEventListener('pointerdown', event => {
-    if (!allowed() || event.button !== 0 || !event.target.closest('a,button')) return;
+    if (!allowed() || window.portalAdvanced?.get().buttons===false || (window.portalAdvanced&&window.portalAdvanced.get().touch!=='wave') || event.button !== 0 || !event.target.closest('a,button')) return;
     const ring = document.createElement('span'); ring.className = 'touch-wave'; ring.setAttribute('aria-hidden','true');
     ring.style.left = event.clientX + 'px'; ring.style.top = event.clientY + 'px';
     (event.target.closest('dialog[open]') || document.body).append(ring);
@@ -37,7 +37,7 @@
   reduced.addEventListener('change',sync);addEventListener('portalsettingschange',sync);document.addEventListener('visibilitychange',sync);sync();
   window.portalEffects = {
     scatter() {
-      if(!allowed())return;
+      if(!allowed()||window.portalAdvanced?.get().transitions===false)return;
       const title=document.querySelector('.section-wordmark .wordmark-copy>span') || document.querySelector('h2');
       if(!title)return;
       const box=title.getBoundingClientRect(), text=title.textContent.trim().slice(0,28);
@@ -46,7 +46,7 @@
       setTimeout(()=>overlay.remove(),450);
     },
     zoom(source,target,dialog) {
-      if(!allowed() || !source || !target || !source.naturalWidth)return;
+      if(!allowed() || window.portalAdvanced?.get().transitions===false || !source || !target || !source.naturalWidth)return;
       const from=source.getBoundingClientRect();
       const run=()=>{
         if(!dialog.open || !allowed())return;

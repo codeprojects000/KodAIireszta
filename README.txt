@@ -1,1 +1,1 @@
-Kod, AI i reszta — spójne karty i galeria. Przeczytaj START-TUTAJ.md. Bez zmian DNS.
+Kod, AI i reszta — 30 ustawień zaawansowanych. Przeczytaj START-TUTAJ.md. Hosting pozostaje GitHub Pages. Bez zmian DNS.
