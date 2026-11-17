@@ -170,7 +170,7 @@
     const position = {target:next.pathname,savedAt:Date.now(),y:scrollY,anchor:visible ? visible.item.id : null,ratio:visible ? Math.min(1,Math.max(0,(inset-visible.bounds.top)/visible.bounds.height)) : 0};
     try { sessionStorage.setItem(transitionKey, JSON.stringify(position)); } catch { return; }
     event.preventDefault();
-    if (reducedMotion.matches || !preferences.allowMotion()) { location.assign(next.href); return; }
+    if (reducedMotion.matches || !preferences.allowMotion() || window.portalAdvanced?.get().transitions===false) { location.assign(next.href); return; }
     window.portalEffects?.scatter();
     document.documentElement.classList.add('language-leaving');
     setTimeout(() => location.assign(next.href), 420);

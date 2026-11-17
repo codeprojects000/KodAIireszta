@@ -1,5 +1,6 @@
 'use strict';
 (function(){
+ if(new URLSearchParams(location.search||'').has('appearance-preview'))return;
  const en=document.documentElement.lang==='en',panel=document.getElementById('settings-form');
  const install=document.createElement('button');install.type='button';install.className='install-app';install.textContent=en?'＋ Install app':'＋ Zainstaluj aplikację';
  const help=document.createElement('p');help.className='setting-help';panel.append(install,help);let pending=null;

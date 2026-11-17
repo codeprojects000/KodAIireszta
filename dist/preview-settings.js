@@ -3,7 +3,7 @@
  const en=document.documentElement.lang==='en',t=(pl,eng)=>en?eng:pl;
  const field=document.createElement('fieldset'),legend=document.createElement('legend');legend.textContent=t('Podgląd wodotrysków','Visual effects preview');field.append(legend);
  const note=document.createElement('p');note.className='setting-help';note.textContent=t('Dodatkowe animacje są domyślnie wyłączone. Otwórz osobny podgląd — nie zmieni wyglądu ani ustawień Twojej strony.','Extra animations are off by default. Open a separate preview without changing your page or its settings.');field.append(note);
- const open=document.createElement('button');open.type='button';open.className='settings-reset';open.textContent=t('Zobacz wodotryski ↗','Preview effects ↗');open.setAttribute('aria-haspopup','dialog');field.append(open);document.getElementById('settings-form').append(field);
+ const open=document.createElement('button');open.type='button';open.className='settings-reset';open.textContent=t('Zobacz wodotryski ↗','Preview effects ↗');open.dataset.openEffects='true';open.setAttribute('aria-haspopup','dialog');field.append(open);document.getElementById('settings-form').append(field);
  const dialog=document.createElement('dialog');dialog.className='effects-preview-dialog';dialog.setAttribute('aria-labelledby','effects-preview-title');
  const bar=document.createElement('div');bar.className='effects-preview-toolbar';const title=document.createElement('h2');title.id='effects-preview-title';title.textContent=t('Podgląd animowanej wersji','Animated version preview');
  const phone=document.createElement('button');phone.type='button';phone.textContent=t('Widok telefonu','Phone view');phone.setAttribute('aria-pressed','false');
