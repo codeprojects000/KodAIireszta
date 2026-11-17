@@ -269,7 +269,7 @@
         "sources": {
           "about": true,
           "readme": true,
-          "page": false
+          "page": true
         },
         "readme": {
           "title": "Mój System",
