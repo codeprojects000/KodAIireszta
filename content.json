@@ -154,6 +154,28 @@
       "linkLabel": "Otwórz Horizon",
       "githubUpdatedAt": "2026-11-16T16:15:18Z",
       "githubDefaultBranch": "main"
+    },
+    {
+      "id": "github-636c617564656f73",
+      "title": "ClaudeOS",
+      "category": "Opublikowane",
+      "accent": "#39decf",
+      "image": "assets/github-projects/github-636c617564656f73.svg",
+      "gallery": [
+        {
+          "image": "assets/github-projects/github-636c617564656f73.svg",
+          "caption": "Projekt na GitHubie",
+          "captionEn": "Project on GitHub"
+        }
+      ],
+      "description": "prosty Webowy system przygotowany przez CLaude",
+      "details": "prosty Webowy system przygotowany przez CLaude",
+      "repositoryUrl": "https://github.com/codeprojects000/ClaudeOS",
+      "autoImported": true,
+      "url": "https://codeprojects000.github.io/ClaudeOS/",
+      "linkLabel": "Uruchom ClaudeOS",
+      "githubUpdatedAt": "2026-11-16T18:01:18Z",
+      "githubDefaultBranch": "main"
     }
   ],
   "posts": [
@@ -410,6 +432,28 @@
         "url": "https://codeprojects000.github.io/systemOS_web/",
         "linkLabel": "Open Horizon",
         "githubUpdatedAt": "2026-11-16T16:15:18Z",
+        "githubDefaultBranch": "main"
+      },
+      {
+        "id": "github-636c617564656f73",
+        "title": "ClaudeOS",
+        "category": "Published",
+        "accent": "#39decf",
+        "image": "assets/github-projects/github-636c617564656f73.svg",
+        "gallery": [
+          {
+            "image": "assets/github-projects/github-636c617564656f73.svg",
+            "caption": "Project on GitHub",
+            "captionEn": "Project on GitHub"
+          }
+        ],
+        "description": "Explore “ClaudeOS”, a project from my public GitHub profile.",
+        "details": "Open the app or browse its public source repository to find out more.",
+        "repositoryUrl": "https://github.com/codeprojects000/ClaudeOS",
+        "autoImported": true,
+        "url": "https://codeprojects000.github.io/ClaudeOS/",
+        "linkLabel": "Open ClaudeOS",
+        "githubUpdatedAt": "2026-11-16T18:01:18Z",
         "githubDefaultBranch": "main"
       }
     ],
