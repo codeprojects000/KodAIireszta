@@ -154,28 +154,6 @@
       "linkLabel": "Otwórz Horizon",
       "githubUpdatedAt": "2026-11-16T16:15:18Z",
       "githubDefaultBranch": "main"
-    },
-    {
-      "id": "github-636c617564656f73",
-      "title": "ClaudeOS",
-      "category": "Opublikowane",
-      "accent": "#39decf",
-      "image": "assets/github-projects/github-636c617564656f73.svg",
-      "gallery": [
-        {
-          "image": "assets/github-projects/github-636c617564656f73.svg",
-          "caption": "Projekt na GitHubie",
-          "captionEn": "Project on GitHub"
-        }
-      ],
-      "description": "prosty Webowy system przygotowany przez CLaude",
-      "details": "prosty Webowy system przygotowany przez CLaude",
-      "repositoryUrl": "https://github.com/codeprojects000/ClaudeOS",
-      "autoImported": true,
-      "url": "https://codeprojects000.github.io/ClaudeOS/",
-      "linkLabel": "Uruchom ClaudeOS",
-      "githubUpdatedAt": "2026-11-16T18:01:18Z",
-      "githubDefaultBranch": "main"
     }
   ],
   "posts": [
@@ -433,28 +411,6 @@
         "linkLabel": "Open Horizon",
         "githubUpdatedAt": "2026-11-16T16:15:18Z",
         "githubDefaultBranch": "main"
-      },
-      {
-        "id": "github-636c617564656f73",
-        "title": "ClaudeOS",
-        "category": "Published",
-        "accent": "#39decf",
-        "image": "assets/github-projects/github-636c617564656f73.svg",
-        "gallery": [
-          {
-            "image": "assets/github-projects/github-636c617564656f73.svg",
-            "caption": "Project on GitHub",
-            "captionEn": "Project on GitHub"
-          }
-        ],
-        "description": "Explore “ClaudeOS”, a project from my public GitHub profile.",
-        "details": "Open the app or browse its public source repository to find out more.",
-        "repositoryUrl": "https://github.com/codeprojects000/ClaudeOS",
-        "autoImported": true,
-        "url": "https://codeprojects000.github.io/ClaudeOS/",
-        "linkLabel": "Open ClaudeOS",
-        "githubUpdatedAt": "2026-11-16T18:01:18Z",
-        "githubDefaultBranch": "main"
       }
     ],
     "posts": [
@@ -559,6 +515,10 @@
       {
         "width": 640,
         "src": "assets/responsive/skoczek-gra-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/skoczek-gra.png",
+        "width": 1280
       }
     ],
     "assets/public-projects/angielski-gramatyka.png": [
@@ -569,6 +529,10 @@
       {
         "width": 640,
         "src": "assets/responsive/angielski-gramatyka-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/angielski-gramatyka.png",
+        "width": 1265
       }
     ],
     "assets/public-projects/muzyka-pianino.png": [
@@ -579,6 +543,10 @@
       {
         "width": 640,
         "src": "assets/responsive/muzyka-pianino-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/muzyka-pianino.png",
+        "width": 1265
       }
     ],
     "assets/thumbnails/tkLSmNXAuQM.jpg": [
@@ -595,6 +563,10 @@
       {
         "width": 640,
         "src": "assets/responsive/horizon-desktop-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/horizon-desktop.png",
+        "width": 1280
       }
     ],
     "assets/public-projects/horizon-login.png": [
@@ -605,6 +577,10 @@
       {
         "width": 640,
         "src": "assets/responsive/horizon-login-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/horizon-login.png",
+        "width": 1280
       }
     ],
     "assets/thumbnails/NJQFsLPTyLI.jpg": [
@@ -633,6 +609,10 @@
       {
         "width": 640,
         "src": "assets/responsive/skoczek-menu-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/skoczek-menu.png",
+        "width": 1280
       }
     ],
     "assets/public-projects/kalorie-start.png": [
@@ -643,6 +623,10 @@
       {
         "width": 640,
         "src": "assets/responsive/kalorie-start-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/kalorie-start.png",
+        "width": 1280
       }
     ],
     "assets/thumbnails/Y_R-0Sqd5U4.jpg": [
@@ -675,6 +659,10 @@
       {
         "width": 640,
         "src": "assets/responsive/finanse-start-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/finanse-start.png",
+        "width": 1265
       }
     ],
     "assets/public-projects/finanse-plan.png": [
@@ -685,6 +673,10 @@
       {
         "width": 640,
         "src": "assets/responsive/finanse-plan-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/finanse-plan.png",
+        "width": 1265
       }
     ],
     "assets/public-projects/muzyka-warsztat.png": [
@@ -695,6 +687,10 @@
       {
         "width": 640,
         "src": "assets/responsive/muzyka-warsztat-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/muzyka-warsztat.png",
+        "width": 1265
       }
     ],
     "assets/public-projects/angielski-dodaj.png": [
@@ -705,6 +701,10 @@
       {
         "width": 640,
         "src": "assets/responsive/angielski-dodaj-640.jpg"
+      },
+      {
+        "src": "assets/public-projects/angielski-dodaj.png",
+        "width": 1265
       }
     ]
   }

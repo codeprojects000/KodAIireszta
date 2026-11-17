@@ -1,1 +1,1 @@
-Kod, AI i reszta — animowana strona. Zacznij od START-TUTAJ.md. Hosting GitHub Pages, bez zmian DNS.
+Kod, AI i reszta — spójne karty i galeria. Przeczytaj START-TUTAJ.md. Bez zmian DNS.

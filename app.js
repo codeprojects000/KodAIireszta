@@ -79,7 +79,7 @@
     const card = el('article', '', 'card'); card.id = 'project-' + project.id; card.style.setProperty('--project-accent', project.accent);
     const preview = el('button', '', 'project-preview'); preview.type = 'button'; preview.setAttribute('aria-label', words.preview + project.title);
     const chrome = el('span', '', 'preview-chrome'); chrome.append(el('span', '● ● ●', 'preview-dots'), el('span', project.title, 'preview-label'), el('span', '⤢', 'preview-arrow'));
-    const image = el('img', ''); image.src = project.image; responsiveImage(image, project.image, '(max-width: 760px) 90vw, 420px'); image.alt = words.shot + project.title; image.loading = 'lazy'; image.decoding = 'async'; image.width = 1265; image.height = 712;
+    const image = el('img', ''); image.src = project.image; responsiveImage(image, project.image, '(max-width: 760px) 90vw, 180px'); image.alt = words.shot + project.title; image.loading = 'lazy'; image.decoding = 'async'; image.width = 1265; image.height = 712;
     preview.append(chrome, image, el('span', words.zoom + ' ⤢', 'preview-hint')); preview.onclick = () => showGallery(project, image);
     card.append(preview, el('span', project.category, 'badge'), el('h3', project.title), el('p', project.description));
     const actions = el('div', '', 'project-actions'); const more = el('button', words.details, 'project-details'); more.type = 'button'; more.onclick = () => showProject(project); actions.append(more);
