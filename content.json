@@ -27,7 +27,20 @@
       "repositoryUrl": "https://github.com/codeprojects000/finanse-",
       "linkLabel": "Uruchom Smart Finance",
       "githubUpdatedAt": "2026-11-16T15:51:24Z",
-      "githubDefaultBranch": "main"
+      "githubDefaultBranch": "main",
+      "automation": {
+        "locks": {},
+        "sources": {
+          "about": true,
+          "readme": true,
+          "page": false
+        },
+        "readme": {
+          "title": "Smart Finance",
+          "description": "Prywatna aplikacja do budżetu domowego na telefon (PWA). Wersja 1.0.0. Dane zapisują się tylko w Twoim telefonie — nic nie trafia na serwer.",
+          "details": "apka finansowa\n\nPrywatna aplikacja do budżetu domowego na telefon (PWA). Wersja 1.0.0. Dane zapisują się tylko w Twoim telefonie — nic nie trafia na serwer.\n\n• Start: bilans miesiąca, majątek netto, ile zostało do zapłaty, wydatki wg kategorii, ostatnie transakcje\n• Dodawanie przychodów, wydatków i transferów; szybki tekst („Paliwo 250 zł dzisiaj”); ostatnie operacje jednym dotknięciem\n• Zwroty, tagi, oznaczenie „cykliczna”, inne waluty (zapisywane osobno, bez przeliczania)\n• Kategorie i podkategorie (edycja, ukrywanie, słowa kluczowe)"
+        }
+      }
     },
     {
       "id": "muzyczne-klocki",
@@ -53,7 +66,20 @@
       "repositoryUrl": "https://github.com/codeprojects000/muzyczne-klocki",
       "linkLabel": "Uruchom Muzyczne Klocki",
       "githubUpdatedAt": "2026-11-16T15:47:35Z",
-      "githubDefaultBranch": "main"
+      "githubDefaultBranch": "main",
+      "automation": {
+        "locks": {},
+        "sources": {
+          "about": true,
+          "readme": true,
+          "page": false
+        },
+        "readme": {
+          "title": "Muzyczne Klocki",
+          "description": "Aplikacja dla dzieci do tworzenia muzyki z kolorowych klocków, w stylu dawnego eJay. Działa w przeglądarce, można ją zainstalować na telefonie i używać bez internetu.",
+          "details": "gra dla muzyczne klocki\n\nAplikacja dla dzieci do tworzenia muzyki z kolorowych klocków, w stylu dawnego eJay. Działa w przeglądarce, można ją zainstalować na telefonie i używać bez internetu.\n\n• Ekran powitalny: „Cześć, [imię]!”, tańcząca postać i awatar dziecka, losowy bit, losowa scena, przyśpiewka z imieniem i „Tworzymy razem, [imię]!”.\n• 164 klocki na 9 ścieżkach: Bębny, Bas, Akordy, Melodia, Instrumenty, Głosy, Zwierzaki, Efekty, Moje dźwięki. Każda ścieżka ma kategorie: spokojne, skoczne, śmieszne. Wszystko gra w\n• 8 tańczących postaci: robot, kot, dinozaur, jednorożec, kosmita, pingwin, panda, rakieta.\n• Wideo z piosenką: pionowe, poziome albo kwadratowe, 6 scen, tańcząca postać, klocki w rytm, konfetti na końcu."
+        }
+      }
     },
     {
       "id": "angielski",
@@ -79,7 +105,20 @@
       "repositoryUrl": "https://github.com/codeprojects000/angielski",
       "linkLabel": "Uruchom Mój angielski",
       "githubUpdatedAt": "2026-11-16T15:44:39Z",
-      "githubDefaultBranch": "main"
+      "githubDefaultBranch": "main",
+      "automation": {
+        "locks": {},
+        "sources": {
+          "about": true,
+          "readme": true,
+          "page": false
+        },
+        "readme": {
+          "title": "Mój angielski",
+          "description": "Aplikacja do nauki angielskiego: słówka i zdania z tłumaczeniem, wymową po polsku, fiszki z inteligentnym powtarzaniem, gramatyka, testy i pomoc AI.",
+          "details": "apka do angielskiego\n\nAplikacja do nauki angielskiego: słówka i zdania z tłumaczeniem, wymową po polsku, fiszki z inteligentnym powtarzaniem, gramatyka, testy i pomoc AI.\n\n• index.html – cała aplikacja\n• manifest.webmanifest, sw.js, icon-.png, apple-touch-icon.png – instalacja na telefonie (ekran główny)"
+        }
+      }
     },
     {
       "id": "skoczek",
@@ -105,7 +144,20 @@
       "repositoryUrl": "https://github.com/codeprojects000/gra_skoczek",
       "linkLabel": "Uruchom Skoczek",
       "githubUpdatedAt": "2026-11-16T15:10:08Z",
-      "githubDefaultBranch": "main"
+      "githubDefaultBranch": "main",
+      "automation": {
+        "locks": {},
+        "sources": {
+          "about": true,
+          "readme": true,
+          "page": false
+        },
+        "readme": {
+          "title": "Skoczek",
+          "description": "Gra platformowa w przeglądarce. Żabka przechodzi 10 krain: Polana, Gęsty las, Słoneczna plaża, Wzgórza o zmierzchu, Mgliste bagno, Zimowa kraina, Kryształowa jaskinia, Nocna twierdza, Wulkan i Podniebne wyspy. Każda kraina ma własną muzykę.",
+          "details": "prosta gra skoczek\n\nGra platformowa w przeglądarce. Żabka przechodzi 10 krain: Polana, Gęsty las, Słoneczna plaża, Wzgórza o zmierzchu, Mgliste bagno, Zimowa kraina, Kryształowa jaskinia, Nocna twierdza, Wulkan i Podniebne wyspy. Każda kraina ma własną muzykę.\n\n• Utwórz nowe repozytorium, np. skoczek (publiczne).\n• Add file → Upload files i przeciągnij całą zawartość tego folderu (razem z folderem icons).\n• Settings → Pages → Branch: main, folder: / (root) → Save.\n• Po minucie gra działa pod adresem https://TWOJA-NAZWA.github.io/skoczek/."
+        }
+      }
     },
     {
       "id": "krok-kcal",
@@ -126,7 +178,20 @@
       "repositoryUrl": "https://github.com/codeprojects000/kalorie",
       "linkLabel": "Uruchom Krok & Kcal",
       "githubUpdatedAt": "2026-11-16T15:46:22Z",
-      "githubDefaultBranch": "main"
+      "githubDefaultBranch": "main",
+      "automation": {
+        "locks": {},
+        "sources": {
+          "about": true,
+          "readme": true,
+          "page": false
+        },
+        "readme": {
+          "title": "fitness-kalorie",
+          "description": "prosta apka kroki i kalorie",
+          "details": "prosta apka kroki i kalorie"
+        }
+      }
     },
     {
       "id": "github-73797374656d6f735f776562",
@@ -153,11 +218,24 @@
       "url": "https://codeprojects000.github.io/systemOS_web/",
       "linkLabel": "Otwórz Horizon",
       "githubUpdatedAt": "2026-11-16T16:15:18Z",
-      "githubDefaultBranch": "main"
+      "githubDefaultBranch": "main",
+      "automation": {
+        "locks": {},
+        "sources": {
+          "about": true,
+          "readme": true,
+          "page": false
+        },
+        "readme": {
+          "title": "Horizon Custom Edition",
+          "description": "Kod, AI i inne OS 8.2 • Personalization Pro",
+          "details": "prosty system oparty na web\n\nKod, AI i inne OS 8.2 • Personalization Pro\n\n• 8 palet kolorów; oddzielny akcent, szkło, tekst i pasek zadań; do 20 własnych palet.\n• Okna: krycie 45–100%, rozmycie 0–40 px, narożniki 0–32 px i tekst 12–20 px.\n• 8 gradientów offline, 6 fotografii online, import do 12 zdjęć JPEG/PNG/WebP i pokaz slajdów.\n• Kadrowanie fotografii, wypełnienie / całe zdjęcie / kafelki, nasycenie, jasność, rozmycie i ruch tła."
+        }
+      }
     },
     {
       "id": "github-636c617564656f73",
-      "title": "ClaudeOS",
+      "title": "Mój System",
       "category": "Opublikowane",
       "accent": "#39decf",
       "image": "assets/github-projects/github-636c617564656f73.svg",
@@ -168,36 +246,32 @@
           "captionEn": "Project on GitHub"
         }
       ],
-      "description": "prosty Webowy system przygotowany przez CLaude",
-      "details": "prosty Webowy system przygotowany przez CLaude",
+      "description": "Polskojęzyczna symulacja systemu operacyjnego działająca w przeglądarce. Projekt powstał z pomocą Claude’a na potrzeby kanału Kod, AI i reszta.",
+      "details": "prosty Webowy system przygotowany przez CLaude\n\nPolskojęzyczna symulacja systemu operacyjnego działająca w przeglądarce. Projekt powstał z pomocą Claude’a na potrzeby kanału Kod, AI i reszta.\n\n• Pulpit z ikonami, oknami, paskiem zadań i kalendarzem.\n• Notatnik, Pliki, Terminal, Kalkulator, Ustawienia i Menedżer zadań.\n• Rysowanie, Lista zadań, Zegar, Pianino i gra Wąż.\n• Iskra, lokalny asystent reagujący na wbudowane polecenia. Potrafi m.in. otworzyć aplikację i zapisać notatkę.",
       "repositoryUrl": "https://github.com/codeprojects000/ClaudeOS",
       "autoImported": true,
       "url": "https://codeprojects000.github.io/ClaudeOS/",
-      "linkLabel": "Uruchom ClaudeOS",
+      "linkLabel": "Uruchom Mój System",
       "githubUpdatedAt": "2026-11-16T18:01:18Z",
-      "githubDefaultBranch": "main"
-    },
-    {
-      "id": "github-746573745f7265706f",
-      "title": "test repo",
-      "category": "Kod źródłowy",
-      "accent": "#39decf",
-      "image": "assets/github-projects/github-746573745f7265706f.svg",
-      "gallery": [
-        {
-          "image": "assets/github-projects/github-746573745f7265706f.svg",
-          "caption": "Projekt na GitHubie",
-          "captionEn": "Project on GitHub"
+      "githubDefaultBranch": "main",
+      "automation": {
+        "locks": {},
+        "generated": {
+          "title": "Mój System",
+          "description": "Polskojęzyczna symulacja systemu operacyjnego działająca w przeglądarce. Projekt powstał z pomocą Claude’a na potrzeby kanału Kod, AI i reszta.",
+          "details": "prosty Webowy system przygotowany przez CLaude\n\nPolskojęzyczna symulacja systemu operacyjnego działająca w przeglądarce. Projekt powstał z pomocą Claude’a na potrzeby kanału Kod, AI i reszta.\n\n• Pulpit z ikonami, oknami, paskiem zadań i kalendarzem.\n• Notatnik, Pliki, Terminal, Kalkulator, Ustawienia i Menedżer zadań.\n• Rysowanie, Lista zadań, Zegar, Pianino i gra Wąż.\n• Iskra, lokalny asystent reagujący na wbudowane polecenia. Potrafi m.in. otworzyć aplikację i zapisać notatkę."
+        },
+        "sources": {
+          "about": true,
+          "readme": true,
+          "page": false
+        },
+        "readme": {
+          "title": "Mój System",
+          "description": "Polskojęzyczna symulacja systemu operacyjnego działająca w przeglądarce. Projekt powstał z pomocą Claude’a na potrzeby kanału Kod, AI i reszta.",
+          "details": "prosty Webowy system przygotowany przez CLaude\n\nPolskojęzyczna symulacja systemu operacyjnego działająca w przeglądarce. Projekt powstał z pomocą Claude’a na potrzeby kanału Kod, AI i reszta.\n\n• Pulpit z ikonami, oknami, paskiem zadań i kalendarzem.\n• Notatnik, Pliki, Terminal, Kalkulator, Ustawienia i Menedżer zadań.\n• Rysowanie, Lista zadań, Zegar, Pianino i gra Wąż.\n• Iskra, lokalny asystent reagujący na wbudowane polecenia. Potrafi m.in. otworzyć aplikację i zapisać notatkę."
         }
-      ],
-      "description": "re",
-      "details": "re",
-      "repositoryUrl": "https://github.com/codeprojects000/test_repo",
-      "autoImported": true,
-      "url": "https://github.com/codeprojects000/test_repo",
-      "linkLabel": "Zobacz kod na GitHub",
-      "githubUpdatedAt": "2026-11-17T13:14:22Z",
-      "githubDefaultBranch": "main"
+      }
     }
   ],
   "posts": [
@@ -458,7 +532,7 @@
       },
       {
         "id": "github-636c617564656f73",
-        "title": "ClaudeOS",
+        "title": "Mój System",
         "category": "Published",
         "accent": "#39decf",
         "image": "assets/github-projects/github-636c617564656f73.svg",
@@ -474,30 +548,8 @@
         "repositoryUrl": "https://github.com/codeprojects000/ClaudeOS",
         "autoImported": true,
         "url": "https://codeprojects000.github.io/ClaudeOS/",
-        "linkLabel": "Open ClaudeOS",
+        "linkLabel": "Open Mój System",
         "githubUpdatedAt": "2026-11-16T18:01:18Z",
-        "githubDefaultBranch": "main"
-      },
-      {
-        "id": "github-746573745f7265706f",
-        "title": "test repo",
-        "category": "Source code",
-        "accent": "#39decf",
-        "image": "assets/github-projects/github-746573745f7265706f.svg",
-        "gallery": [
-          {
-            "image": "assets/github-projects/github-746573745f7265706f.svg",
-            "caption": "Project on GitHub",
-            "captionEn": "Project on GitHub"
-          }
-        ],
-        "description": "Explore “test repo”, a project from my public GitHub profile.",
-        "details": "Open the app or browse its public source repository to find out more.",
-        "repositoryUrl": "https://github.com/codeprojects000/test_repo",
-        "autoImported": true,
-        "url": "https://github.com/codeprojects000/test_repo",
-        "linkLabel": "View source on GitHub",
-        "githubUpdatedAt": "2026-11-17T13:14:22Z",
         "githubDefaultBranch": "main"
       }
     ],
