@@ -238,12 +238,17 @@
       "title": "Mój System",
       "category": "Opublikowane",
       "accent": "#39decf",
-      "image": "assets/github-projects/github-636c617564656f73.svg",
+      "image": "assets/github-projects/auto-636c617564656f73-11d136af083421c1-desktop.jpg",
       "gallery": [
         {
-          "image": "assets/github-projects/github-636c617564656f73.svg",
-          "caption": "Projekt na GitHubie",
-          "captionEn": "Project on GitHub"
+          "image": "assets/github-projects/auto-636c617564656f73-11d136af083421c1-desktop.jpg",
+          "caption": "Widok komputerowy",
+          "captionEn": "Desktop view"
+        },
+        {
+          "image": "assets/github-projects/auto-636c617564656f73-11d136af083421c1-mobile.jpg",
+          "caption": "Widok telefonu",
+          "captionEn": "Phone view"
         }
       ],
       "description": "Polskojęzyczna symulacja systemu operacyjnego działająca w przeglądarce. Projekt powstał z pomocą Claude’a na potrzeby kanału Kod, AI i reszta.",
@@ -270,6 +275,22 @@
           "title": "Mój System",
           "description": "Polskojęzyczna symulacja systemu operacyjnego działająca w przeglądarce. Projekt powstał z pomocą Claude’a na potrzeby kanału Kod, AI i reszta.",
           "details": "prosty Webowy system przygotowany przez CLaude\n\nPolskojęzyczna symulacja systemu operacyjnego działająca w przeglądarce. Projekt powstał z pomocą Claude’a na potrzeby kanału Kod, AI i reszta.\n\n• Pulpit z ikonami, oknami, paskiem zadań i kalendarzem.\n• Notatnik, Pliki, Terminal, Kalkulator, Ustawienia i Menedżer zadań.\n• Rysowanie, Lista zadań, Zegar, Pianino i gra Wąż.\n• Iskra, lokalny asystent reagujący na wbudowane polecenia. Potrafi m.in. otworzyć aplikację i zapisać notatkę."
+        },
+        "page": {
+          "title": "Mój System",
+          "heading": "",
+          "description": "",
+          "paragraphs": []
+        },
+        "screenshots": {
+          "managed": true,
+          "fingerprint": "141607d04d095e05",
+          "capturedAt": "2026-11-17T16:26:27.821Z",
+          "files": [
+            "assets/github-projects/auto-636c617564656f73-11d136af083421c1-desktop.jpg",
+            "assets/github-projects/auto-636c617564656f73-11d136af083421c1-mobile.jpg",
+            "assets/github-projects/auto-636c617564656f73-11d136af083421c1-thumb.jpg"
+          ]
         }
       }
     }
@@ -535,12 +556,17 @@
         "title": "Mój System",
         "category": "Published",
         "accent": "#39decf",
-        "image": "assets/github-projects/github-636c617564656f73.svg",
+        "image": "assets/github-projects/auto-636c617564656f73-11d136af083421c1-desktop.jpg",
         "gallery": [
           {
-            "image": "assets/github-projects/github-636c617564656f73.svg",
-            "caption": "Project on GitHub",
-            "captionEn": "Project on GitHub"
+            "image": "assets/github-projects/auto-636c617564656f73-11d136af083421c1-desktop.jpg",
+            "caption": "Desktop view",
+            "captionEn": "Desktop view"
+          },
+          {
+            "image": "assets/github-projects/auto-636c617564656f73-11d136af083421c1-mobile.jpg",
+            "caption": "Phone view",
+            "captionEn": "Phone view"
           }
         ],
         "description": "Explore “ClaudeOS”, a project from my public GitHub profile.",
@@ -845,6 +871,16 @@
       {
         "src": "assets/public-projects/angielski-dodaj.png",
         "width": 1265
+      }
+    ],
+    "assets/github-projects/auto-636c617564656f73-11d136af083421c1-desktop.jpg": [
+      {
+        "src": "assets/github-projects/auto-636c617564656f73-11d136af083421c1-thumb.jpg",
+        "width": 640
+      },
+      {
+        "src": "assets/github-projects/auto-636c617564656f73-11d136af083421c1-desktop.jpg",
+        "width": 1440
       }
     ]
   }
