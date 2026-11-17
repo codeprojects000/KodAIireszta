@@ -6,6 +6,11 @@ on:
   schedule:
     - cron: '17 */6 * * *'
   workflow_dispatch:
+    inputs:
+      refresh_screenshots:
+        description: 'Odśwież także istniejące galerie (zachowaj ręczne opisy)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -19,7 +24,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -34,21 +39,52 @@ jobs:
       - name: Update videos
         if: github.event_name != 'push'
         run: node scripts/sync-youtube.cjs
-      - name: Update projects
-        if: github.event_name != 'push'
+      - name: Update projects and README descriptions
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/sync-github.cjs
-      - name: Save content
-        if: github.event_name != 'push'
+      - name: Plan project screenshots
+        id: capture_plan
+        env:
+          REFRESH_SCREENSHOTS: ${{ inputs.refresh_screenshots || 'false' }}
+        run: node scripts/capture-projects.cjs --plan
+      - name: Install screenshot dependencies only when needed
+        id: capture_deps
+        if: steps.capture_plan.outputs.needed == 'true'
+        continue-on-error: true
+        working-directory: automation
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        id: capture_browser
+        if: steps.capture_plan.outputs.needed == 'true' && steps.capture_deps.outcome == 'success'
+        continue-on-error: true
+        working-directory: automation
+        run: npx playwright install --with-deps chromium
+      - name: Capture public apps and prepare thumbnails
+        if: steps.capture_plan.outputs.needed == 'true' && steps.capture_browser.outcome == 'success'
+        continue-on-error: true
+        env:
+          REFRESH_SCREENSHOTS: ${{ inputs.refresh_screenshots || 'false' }}
+        run: node scripts/capture-projects.cjs
+      - name: Report unavailable screenshot tools
+        if: steps.capture_plan.outputs.needed == 'true' && (steps.capture_deps.outcome == 'failure' || steps.capture_browser.outcome == 'failure')
         run: |
-          git add -- content.json content.js assets
+          echo "::warning::Screenshot tools unavailable; keeping previous project images."
+          echo "## Podglądy projektów" >> "$GITHUB_STEP_SUMMARY"
+          echo "Nie udało się zainstalować narzędzi zdjęć. Poprzednie obrazki pozostają; sprawdź kroki instalacji." >> "$GITHUB_STEP_SUMMARY"
+      - name: Validate generated content
+        run: |
+          node --check content.js
+          node -e "JSON.parse(require('fs').readFileSync('content.json','utf8'))"
+      - name: Save content and generated project images
+        run: |
+          git add -- content.json content.js assets automation/capture-state.json
           if git diff --cached --quiet; then
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Update portal content"
+          git commit -m "Update portal videos and project previews"
           git push
       - name: Build website
         run: node scripts/build-site.cjs
