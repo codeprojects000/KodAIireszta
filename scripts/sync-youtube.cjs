@@ -17,6 +17,19 @@ function tag(xml, name) {
   const match = xml.match(new RegExp('<'+escaped+'(?:\\s[^>]*)?>([\\s\\S]*?)<\\/'+escaped+'>'));
   return match ? decodeXml(match[1]) : '';
 }
+function feedFormat(entry, videoId) {
+  for (const [link] of entry.matchAll(/<link\b[^>]*>/g)) {
+    const attributes = Object.fromEntries(Array.from(link.matchAll(/([\w:-]+)\s*=\s*(["'])(.*?)\2/g), ([,key,,value]) => [key, decodeXml(value)]));
+    if (attributes.rel !== 'alternate') continue;
+    try {
+      const url = new URL(attributes.href);
+      if (!['www.youtube.com','youtube.com'].includes(url.hostname)) continue;
+      if (url.pathname.replace(/\/$/,'') === '/shorts/'+videoId) return true;
+      if (url.pathname === '/watch' && url.searchParams.get('v') === videoId) return false;
+    } catch {}
+  }
+  return undefined;
+}
 function parseFeed(xml, channelId) {
   if (!CHANNEL.test(channelId)) throw Error('Invalid channel ID');
   if (xml.length > 2_000_000 || /<!DOCTYPE|<!ENTITY/i.test(xml) || !/<feed(?:\s|>)/.test(xml) || !/<\/feed>/.test(xml)) throw Error('Invalid or oversized Atom feed');
@@ -29,7 +42,7 @@ function parseFeed(xml, channelId) {
     if (!VIDEO.test(videoId) || owner !== channelId || !title || !Number.isFinite(Date.parse(publishedAt))) throw Error('Invalid video or unexpected channel in feed');
     if (seen.has(videoId)) throw Error('Duplicate video in feed'); seen.add(videoId);
     const rawUpdated = tag(entry,'updated');
-    return {videoId,title: title.slice(0,300),sourceDescription:tag(entry,'media:description').slice(0,5000),publishedAt:new Date(publishedAt).toISOString(),youtubeUpdatedAt:Number.isFinite(Date.parse(rawUpdated))?new Date(rawUpdated).toISOString():new Date(publishedAt).toISOString()};
+    return {videoId,isShort:feedFormat(entry,videoId),title: title.slice(0,300),sourceDescription:tag(entry,'media:description').slice(0,5000),publishedAt:new Date(publishedAt).toISOString(),youtubeUpdatedAt:Number.isFinite(Date.parse(rawUpdated))?new Date(rawUpdated).toISOString():new Date(publishedAt).toISOString()};
   });
 }
 function shortDescription(value) { const text=(value||'').replace(/\r/g,'').split(/\n\s*\n/).map(x=>x.trim()).find(x=>x&&!/^https?:\/\//i.test(x))||''; return text.length>600?text.slice(0,597).replace(/\s+\S*$/,'')+'…':text; }
@@ -42,7 +55,8 @@ function mergeFeed(original, videos, config) {
     const existing = data.posts.find(post=>post.videoId===video.videoId);
     const thumbnail = 'assets/thumbnails/'+video.videoId+'.jpg';
     const importedDescription = shortDescription(video.sourceDescription);
-    const url = 'https://www.youtube.com/watch?v='+video.videoId;
+    const format = (config.regularVideoIds||[]).includes(video.videoId) ? false : (config.shortVideoIds||[]).includes(video.videoId) ? true : typeof video.isShort==='boolean' ? video.isShort : existing?.isShort;
+    const url = 'https://www.youtube.com/'+(format===true ? 'shorts/'+video.videoId : 'watch?v='+video.videoId);
     let post = existing;
     if (!post) {
       post = {id:'youtube-'+video.videoId,videoId:video.videoId,title:video.title,category:'Z kanału / YouTube',description:importedDescription||'Nowy materiał na kanale „Kod, AI i reszta”. Obejrzyj film na YouTube.',excerpt:'Nowy materiał na kanale „Kod, AI i reszta”.',duration:'',url,thumbnail,autoImported:true,syncTitle:true,syncDescription:true};
@@ -51,6 +65,7 @@ function mergeFeed(original, videos, config) {
     if (post.syncTitle) post.title = video.title;
     if (post.syncDescription && importedDescription) {post.description=importedDescription;post.excerpt=importedDescription;}
     Object.assign(post,{youtubeTitle:video.title,publishedAt:video.publishedAt,youtubeUpdatedAt:video.youtubeUpdatedAt,thumbnail,url});
+    if (typeof format==='boolean') post.isShort=format;
     let en = data.en.posts.find(item=>item.videoId===video.videoId);
     if (!en) {
       en = {...post,title:video.title,category:'From the channel / YouTube',description:'A new video from “Kod, AI i reszta”. Watch it on YouTube. The video is in Polish.',excerpt:'A new video from “Kod, AI i reszta”.',autoImported:true,syncTitle:true};
@@ -58,10 +73,18 @@ function mergeFeed(original, videos, config) {
     }
     if (en.syncTitle) en.title = video.title;
     Object.assign(en,{youtubeTitle:video.title,publishedAt:video.publishedAt,youtubeUpdatedAt:video.youtubeUpdatedAt,thumbnail,url});
+    if (typeof format==='boolean') en.isShort=format;
   });
   // Keep older manually curated videos even after they disappear from the limited feed.
   const compare = (a,b)=>(Date.parse(b.publishedAt)||0)-(Date.parse(a.publishedAt)||0);
   data.posts.sort(compare); data.en.posts.sort(compare);
+  // Apply explicit corrections to archived entries as well as the latest feed.
+  for (const list of [data.posts,data.en.posts]) for (const post of list) {
+    if ((config.shortVideoIds||[]).includes(post.videoId)) post.isShort=true;
+    if ((config.regularVideoIds||[]).includes(post.videoId)) post.isShort=false;
+    if (post.isShort===true) post.url='https://www.youtube.com/shorts/'+post.videoId;
+    else if (post.isShort===false) post.url='https://www.youtube.com/watch?v='+post.videoId;
+  }
   return {data,added};
 }
 async function download(url, limit, fetcher) {

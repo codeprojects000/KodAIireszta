@@ -86,17 +86,31 @@
     const url = safeUrl(project.url); if (url) actions.append(link(project.linkLabel || words.open, url, 'project-open'));
     card.append(actions); get('cards').append(card);
   });
-  (data.posts || []).forEach((post, index) => {
+  const isShort = post => post.isShort === true || (post.isShort !== false && /^https:\/\/(?:www\.)?youtube\.com\/shorts\//.test(post.url || ''));
+  (data.posts || []).filter(post => !isShort(post)).forEach((post, index) => {
     const card = el('article', '', 'post-card'), media = el('div', '', 'post-media'), url = safeUrl(post.url);
     card.id = 'video-' + post.videoId;
     const thumbnail = el('a', '', 'post-thumbnail'); if (url) thumbnail.href = url; thumbnail.target = '_blank'; thumbnail.rel = 'noopener noreferrer'; thumbnail.setAttribute('aria-label', words.watch + ': ' + post.title);
     const image = el('img', ''); image.src = post.thumbnail || ('assets/thumbnails/' + post.videoId + '.jpg'); responsiveImage(image, post.thumbnail || ('assets/thumbnails/' + post.videoId + '.jpg'), '(max-width: 530px) 40vw, 240px'); image.alt = (english ? 'Video thumbnail: ' : 'Miniatura filmu: ') + post.title; image.loading = 'lazy'; image.decoding = 'async'; image.width = 480; image.height = 360; thumbnail.append(image); media.append(thumbnail);
     if (url) { const watch = link(words.watch, url, 'youtube-button'); const icon = el('span', '▶', 'youtube-icon'); icon.setAttribute('aria-hidden', 'true'); watch.prepend(icon); media.append(watch); }
     const text = el('div', '', 'post-copy'); text.append(el('span', String(index + 1).padStart(2, '0') + ' / ' + post.category, 'post-meta'), el('h3', post.title));
-    (post.description || post.excerpt).split(String.fromCharCode(10,10)).forEach(paragraph => text.append(el('p', paragraph)));
+    (post.description || post.excerpt || '').split(String.fromCharCode(10,10)).filter(Boolean).forEach(paragraph => text.append(el('p', paragraph)));
     const date = post.publishedAt ? new Intl.DateTimeFormat(english ? 'en-GB' : 'pl-PL', {day:'numeric',month:'short',year:'numeric',timeZone:'Europe/Warsaw'}).format(new Date(post.publishedAt)) : '';
     text.append(el('span', [post.duration, date, words.video].filter(Boolean).join(' / '), 'post-duration')); card.append(media, text); get('materials').append(card);
   });
+  const shorts = (data.posts || []).filter(isShort);
+  const shortList = get('shorts-list');
+  shorts.forEach(post => {
+    const card = el('article', '', 'short-card'); card.id = 'video-' + post.videoId;
+    const url = safeUrl(post.url), watch = link('', url || 'https://www.youtube.com/@kodaiireszta/shorts', 'short-preview');
+    watch.replaceChildren(); watch.setAttribute('aria-label', words.watch + ': ' + post.title);
+    const image = el('img', ''); image.src = post.thumbnail || ('assets/thumbnails/' + post.videoId + '.jpg');
+    image.alt = ''; image.loading = 'lazy'; image.decoding = 'async'; image.width = 240; image.height = 360;
+    watch.append(image, el('span', '▶', 'short-play'), el('span', 'SHORTS ↗', 'short-label'));
+    const copy = el('div', '', 'post-copy'); copy.append(el('h3', post.title));
+    card.append(watch, copy); shortList.append(card);
+  });
+  if (!shorts.length) shortList.append(el('p', english ? 'New Shorts will appear here after the next channel sync.' : 'Nowe shorty pojawią się tutaj po synchronizacji kanału.', 'shorts-empty'));
   // Pointer effects are enabled only for a mouse-like pointer and unrestricted motion.
   const pointerEffects = matchMedia('(hover: hover) and (pointer: fine)');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
