@@ -304,14 +304,15 @@
       "description": "Czy ChatGPT ogarnie tworzenie obrazu, animację, film w CapCut i sterowanie komputerem z Windowsem? W tym odcinku sprawdzam to w praktyce. Testuję też naukę języka angielskiego z pomocą AI.",
       "excerpt": "Czy ChatGPT ogarnie tworzenie obrazu, animację, film w CapCut i sterowanie komputerem z Windowsem? W tym odcinku sprawdzam to w praktyce. Testuję też naukę języka angielskiego z pomocą AI.",
       "duration": "",
-      "url": "https://www.youtube.com/watch?v=n_Wu4D5pG_M",
+      "url": "https://www.youtube.com/shorts/n_Wu4D5pG_M",
       "thumbnail": "assets/thumbnails/n_Wu4D5pG_M.jpg",
       "autoImported": true,
       "syncTitle": true,
       "syncDescription": true,
       "youtubeTitle": "Czy ChatGPT ogarnie to za mnie? Prosty prosty film w CapCut",
       "publishedAt": "2026-11-18T12:19:01.000Z",
-      "youtubeUpdatedAt": "2026-11-18T12:19:02.000Z"
+      "youtubeUpdatedAt": "2026-11-18T12:19:02.000Z",
+      "isShort": true
     },
     {
       "id": "youtube-b7xlaSZ8F4Y",
@@ -328,7 +329,8 @@
       "syncDescription": true,
       "youtubeTitle": "Jak stworzyłem własną stronę internetową z ChatGPT",
       "publishedAt": "2026-11-18T11:33:05.000Z",
-      "youtubeUpdatedAt": "2026-11-18T12:19:25.000Z"
+      "youtubeUpdatedAt": "2026-11-18T12:19:25.000Z",
+      "isShort": false
     },
     {
       "id": "chatgpt-system",
@@ -343,7 +345,8 @@
       "description": "Własny system operacyjny brzmi jak projekt na lata. W tym materiale staje się tematem eksperymentu z ChatGPT.\n\nTo odcinek dla tych, którzy lubią zadawać AI pytania większe niż „napisz mi prostą funkcję”. Punktem wyjścia jest konkretny pomysł: sprawdzić, co stanie się, gdy poprosimy model o pomoc przy tworzeniu własnego OS.",
       "youtubeTitle": "Czy ChatGPT stworzy mi własny system operacyjny?",
       "publishedAt": "2026-11-14T15:10:55.000Z",
-      "youtubeUpdatedAt": "2026-11-14T15:12:11.000Z"
+      "youtubeUpdatedAt": "2026-11-14T15:12:11.000Z",
+      "isShort": false
     },
     {
       "id": "chatgpt-narzedzia",
@@ -358,7 +361,8 @@
       "description": "Rozmowa z AI może być początkiem pracy nad obrazem, filmem albo zadaniem wykonywanym na komputerze. Ten odcinek zbiera kilka takich zastosowań ChatGPT.\n\nPytanie jest proste: które czynności warto przekazać narzędziu i jak wygląda to w praktyce? To dobry punkt wejścia, jeśli chcesz wyjść poza samo pisanie wiadomości do modelu.",
       "youtubeTitle": "Czy ChatGPT ogarnie to za mnie? Obraz, film, sterowanie komputerem i więcej!",
       "publishedAt": "2026-11-10T20:06:00.000Z",
-      "youtubeUpdatedAt": "2026-11-16T23:31:50.000Z"
+      "youtubeUpdatedAt": "2026-11-16T23:31:50.000Z",
+      "isShort": false
     },
     {
       "id": "claude-gra-20h",
@@ -373,7 +377,8 @@
       "description": "Pomysł na grę to dopiero początek. Później przychodzą kolejne polecenia, uruchamianie projektu i sprawdzanie, czy wszystko działa tak, jak powinno.\n\nTen film poświęcony jest tworzeniu gry od zera z pomocą Claude’a. Już sam temat — 20 godzin promptów i testów — pokazuje skalę pracy, o której mowa w odcinku.",
       "youtubeTitle": "Claude AI tworzy grę od zera! 20 godzin promptów i testów",
       "publishedAt": "2026-11-06T16:23:06.000Z",
-      "youtubeUpdatedAt": "2026-11-10T21:40:46.000Z"
+      "youtubeUpdatedAt": "2026-11-10T21:40:46.000Z",
+      "isShort": false
     },
     {
       "id": "gra-github",
@@ -388,7 +393,8 @@
       "description": "Gra zapisana na własnym komputerze to pierwszy etap. Następnym może być umieszczenie projektu na GitHubie.\n\nW tym materiale temat publikacji plików gry został ujęty krok po kroku. To naturalne uzupełnienie odcinków o tworzeniu: po pracy nad projektem przychodzi czas na jego uporządkowanie i przeniesienie do repozytorium.",
       "youtubeTitle": "Jak wrzucić swoją grę na GitHub- krok po kroku",
       "publishedAt": "2026-11-03T13:18:24.000Z",
-      "youtubeUpdatedAt": "2026-11-10T21:40:25.000Z"
+      "youtubeUpdatedAt": "2026-11-10T21:40:25.000Z",
+      "isShort": false
     },
     {
       "id": "pierwsza-aplikacja",
@@ -403,7 +409,8 @@
       "description": "Od czego zacząć, gdy chcesz stworzyć aplikację z pomocą AI? Ten materiał skupia się na pierwszej aplikacji w Claude.\n\nForma krok po kroku pozwala potraktować odcinek jako wprowadzenie do własnych prób. Zamiast od razu planować rozbudowany produkt, można zacząć od jednego projektu i przyjrzeć się sposobowi pracy z narzędziem.",
       "youtubeTitle": "Pierwsza aplikacja w Claude krok po kroku",
       "publishedAt": "2026-10-28T19:16:03.000Z",
-      "youtubeUpdatedAt": "2026-11-10T21:39:45.000Z"
+      "youtubeUpdatedAt": "2026-11-10T21:39:45.000Z",
+      "isShort": false
     },
     {
       "id": "pierwsza-gra",
@@ -418,7 +425,8 @@
       "description": "Pierwsza własna gra to dobry powód, żeby pokazać swój projekt światu. W tym odcinku punktem wyjścia jest właśnie gra stworzona z pomocą Claude’a.\n\nTo propozycja dla osób, które zastanawiają się nad własnym małym projektem i chcą zobaczyć przykład użycia AI w tworzeniu gier.",
       "youtubeTitle": "Zrobiłem swoją pierwszą grę z pomocą Claude’a",
       "publishedAt": "2026-10-27T16:16:30.000Z",
-      "youtubeUpdatedAt": "2026-11-10T21:39:15.000Z"
+      "youtubeUpdatedAt": "2026-11-10T21:39:15.000Z",
+      "isShort": false
     }
   ],
   "about": [
@@ -622,14 +630,15 @@
         "description": "A new video from “Kod, AI i reszta”. Watch it on YouTube. The video is in Polish.",
         "excerpt": "A new video from “Kod, AI i reszta”.",
         "duration": "",
-        "url": "https://www.youtube.com/watch?v=n_Wu4D5pG_M",
+        "url": "https://www.youtube.com/shorts/n_Wu4D5pG_M",
         "thumbnail": "assets/thumbnails/n_Wu4D5pG_M.jpg",
         "autoImported": true,
         "syncTitle": true,
         "syncDescription": true,
         "youtubeTitle": "Czy ChatGPT ogarnie to za mnie? Prosty prosty film w CapCut",
         "publishedAt": "2026-11-18T12:19:01.000Z",
-        "youtubeUpdatedAt": "2026-11-18T12:19:02.000Z"
+        "youtubeUpdatedAt": "2026-11-18T12:19:02.000Z",
+        "isShort": true
       },
       {
         "id": "youtube-b7xlaSZ8F4Y",
@@ -646,7 +655,8 @@
         "syncDescription": true,
         "youtubeTitle": "Jak stworzyłem własną stronę internetową z ChatGPT",
         "publishedAt": "2026-11-18T11:33:05.000Z",
-        "youtubeUpdatedAt": "2026-11-18T12:19:25.000Z"
+        "youtubeUpdatedAt": "2026-11-18T12:19:25.000Z",
+        "isShort": false
       },
       {
         "id": "chatgpt-system",
@@ -661,7 +671,8 @@
         "description": "An operating system sounds like a project that could take years. In this video, it becomes the starting point for an experiment with ChatGPT.\n\nThis episode is for anyone who likes asking AI bigger questions than “write a simple function”. The idea is to see what happens when a model helps with a project as ambitious as a personal OS.",
         "youtubeTitle": "Czy ChatGPT stworzy mi własny system operacyjny?",
         "publishedAt": "2026-11-14T15:10:55.000Z",
-        "youtubeUpdatedAt": "2026-11-14T15:12:11.000Z"
+        "youtubeUpdatedAt": "2026-11-14T15:12:11.000Z",
+        "isShort": false
       },
       {
         "id": "chatgpt-narzedzia",
@@ -676,7 +687,8 @@
         "description": "A conversation with AI can be the start of an image, a video or a task on your computer. This episode brings together several ways of using ChatGPT.\n\nWhich tasks are worth handing over, and what does that look like in practice? A starting point if you want to go beyond simply exchanging messages with a model.",
         "youtubeTitle": "Czy ChatGPT ogarnie to za mnie? Obraz, film, sterowanie komputerem i więcej!",
         "publishedAt": "2026-11-10T20:06:00.000Z",
-        "youtubeUpdatedAt": "2026-11-16T23:31:50.000Z"
+        "youtubeUpdatedAt": "2026-11-16T23:31:50.000Z",
+        "isShort": false
       },
       {
         "id": "claude-gra-20h",
@@ -691,7 +703,8 @@
         "description": "A game idea is only the beginning. Next come instructions, running the project and checking whether it behaves as intended.\n\nThis video focuses on making a game from scratch with Claude. Its theme — 20 hours of prompts and tests — puts the work behind an AI-assisted project into perspective.",
         "youtubeTitle": "Claude AI tworzy grę od zera! 20 godzin promptów i testów",
         "publishedAt": "2026-11-06T16:23:06.000Z",
-        "youtubeUpdatedAt": "2026-11-10T21:40:46.000Z"
+        "youtubeUpdatedAt": "2026-11-10T21:40:46.000Z",
+        "isShort": false
       },
       {
         "id": "gra-github",
@@ -706,7 +719,8 @@
         "description": "A game saved on your own computer is the first step. The next might be putting the project on GitHub.\n\nThis step-by-step video covers uploading a game project. It follows naturally from building one: after creating something, it is time to organise it and move it into a repository.",
         "youtubeTitle": "Jak wrzucić swoją grę na GitHub- krok po kroku",
         "publishedAt": "2026-11-03T13:18:24.000Z",
-        "youtubeUpdatedAt": "2026-11-10T21:40:25.000Z"
+        "youtubeUpdatedAt": "2026-11-10T21:40:25.000Z",
+        "isShort": false
       },
       {
         "id": "pierwsza-aplikacja",
@@ -721,7 +735,8 @@
         "description": "Where do you start when you want to build an app with AI? This video focuses on creating a first application in Claude.\n\nIts step-by-step approach provides an introduction to trying it yourself. Start with one manageable project and explore the workflow before planning a larger product.",
         "youtubeTitle": "Pierwsza aplikacja w Claude krok po kroku",
         "publishedAt": "2026-10-28T19:16:03.000Z",
-        "youtubeUpdatedAt": "2026-11-10T21:39:45.000Z"
+        "youtubeUpdatedAt": "2026-11-10T21:39:45.000Z",
+        "isShort": false
       },
       {
         "id": "pierwsza-gra",
@@ -736,7 +751,8 @@
         "description": "Making a first game is a good reason to share a project. This episode starts with a game created with help from Claude.\n\nIt is for anyone considering a small project of their own who wants to see an example of AI-assisted game development.",
         "youtubeTitle": "Zrobiłem swoją pierwszą grę z pomocą Claude’a",
         "publishedAt": "2026-10-27T16:16:30.000Z",
-        "youtubeUpdatedAt": "2026-11-10T21:39:15.000Z"
+        "youtubeUpdatedAt": "2026-11-10T21:39:15.000Z",
+        "isShort": false
       }
     ]
   },
